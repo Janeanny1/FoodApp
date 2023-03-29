@@ -14,10 +14,12 @@ class MainActivity : AppCompatActivity() {
     var category = ArrayList<Category>()
     var categoryAdapter = CategoryAdapter()
 
+
     var food = ArrayList<Food>()
     var popularAdapter = PopularAdapter()
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView1: RecyclerView
+    private lateinit var recyclerView2: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,26 +33,24 @@ class MainActivity : AppCompatActivity() {
 
         categoryAdapter.setData(category)
 
-        food.add(Food(R.drawable.pizza, "Pizza", "Ksh.2500.00"))
-        food.add(Food(R.drawable.hamburger, "Hamburger", "Ksh.1800.00"))
-        food.add(Food(R.drawable.bagel, "Bagel", "Ksh.1750.00"))
-        food.add(Food(R.drawable.drinks, "Drinks", "Ksh.70.00"))
+        food.add(Food(R.drawable.pizza, "Pizza", "2500.00", "Onion, Cheese, tomato-sauce,tomato, meat, spices, fresh oregano "))
+        food.add(Food(R.drawable.hamburger, "Hamburger", "1800.00", "special sauce, raw onion,mayonnaise, bun, lettuce "))
+        food.add(Food(R.drawable.bagel, "Bagel", "1750.00", "raw onion, cream cheese,lettuce "))
+        food.add(Food(R.drawable.drinks, "Drinks", "70.00", "carbonated water, sugar, caramel color, caffeine, phosphoric acid, citric acid, natural flavors, carbon dioxide"))
 
         popularAdapter.setData(food)
 
-      recyclerView = findViewById(R.id.recyclerView)
-       val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = categoryAdapter
+        recyclerView1 = findViewById(R.id.recyclerView)
+        recyclerView1.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView1.setHasFixedSize(true)
+        recyclerView1.adapter = categoryAdapter
 
-        popularAdapter.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView.layoutManager = layoutManager
-        recyclerView = findViewById(R.id.recyclerView2)
-        recyclerView.adapter = popularAdapter
-
-
-
+        recyclerView2 = findViewById(R.id.recyclerView2)
+        recyclerView2.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView2.setHasFixedSize(true)
+        recyclerView2.adapter = popularAdapter
     }
-
 }
+
+
 

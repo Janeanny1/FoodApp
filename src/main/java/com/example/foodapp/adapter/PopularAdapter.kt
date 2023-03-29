@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,15 +16,11 @@ class PopularAdapter : RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() 
    lateinit var adapter: PopularAdapter
     lateinit var layoutManager : LinearLayoutManager
 
-    var arrPopular = ArrayList<Food>()
+    var popular = ArrayList<Food>()
     var listener: AdapterView.OnItemClickListener? = null
 
-    class PopularViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-    }
-
     fun setData(food: List<Food>) {
-        arrPopular = food as ArrayList<Food>
+        popular = food as ArrayList<Food>
 
     }
 
@@ -37,14 +34,25 @@ class PopularAdapter : RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() 
     }
 
     override fun getItemCount(): Int {
-        return arrPopular.size
+        return popular.size
 
     }
 
     override fun onBindViewHolder(holder: PopularAdapter.PopularViewHolder, position: Int) {
 
-        holder.itemView.findViewById<TextView>(R.id.title_name).text = arrPopular[position].title
-        holder.itemView.findViewById<TextView>(R.id.amount).text = arrPopular[position].amount
-        holder.itemView.context.resources.getIdentifier(String(), "drawable", holder.itemView.context.packageName)
+        val currentPopular = popular[position]
+
+        holder.titleName.findViewById<TextView>(R.id.title_name).text = popular[position].title
+        holder.txtAmount.findViewById<TextView>(R.id.amount).text = popular[position].amount
+        holder.img.setImageResource(currentPopular.pic)
+    }
+
+    class PopularViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val titleName = itemView.findViewById<TextView>(R.id.title_name)
+        val txtPrice = itemView.findViewById<TextView>(R.id.price)
+        val txtAmount = itemView.findViewById<TextView>(R.id.amount)
+        val txtAdd = itemView.findViewById<TextView>(R.id.add)
+        val img = itemView.findViewById<ImageView>(R.id.popular_list)
+
     }
 }
