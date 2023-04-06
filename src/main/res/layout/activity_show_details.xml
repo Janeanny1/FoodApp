@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowDetailsActivity">
+    tools:context=".ShowDetailsActivity"
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,7 +40,7 @@
             <ImageView
                 android:id="@+id/food_pic"
                 android:layout_width="match_parent"
-                android:layout_height="374dp"
+                android:layout_height="204dp"
                 app:srcCompat="@drawable/pizza" />
 
             <LinearLayout
@@ -50,8 +51,8 @@
 
                 <ImageView
                     android:id="@+id/minus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
+                    android:layout_width="80dp"
+                    android:layout_height="57dp"
                     app:srcCompat="@drawable/minus" />
 
                 <TextView
@@ -68,8 +69,8 @@
 
                 <ImageView
                     android:id="@+id/plus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
+                    android:layout_width="80dp"
+                    android:layout_height="57dp"
                     app:srcCompat="@drawable/plus" />
             </LinearLayout>
 
@@ -87,7 +88,7 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/add_to_cart_btn"
+        android:id="@+id/cart_btn"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_margin="16dp"
@@ -101,4 +102,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

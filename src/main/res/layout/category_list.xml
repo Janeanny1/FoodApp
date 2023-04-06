@@ -9,13 +9,13 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="101dp"
-        android:layout_height="89dp"
+        android:layout_width="83dp"
+        android:layout_height="66dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        android:foregroundGravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -32,8 +32,8 @@
 
     <TextView
         android:id="@+id/title1"
-        android:layout_width="105dp"
-        android:layout_height="32dp"
+        android:layout_width="89dp"
+        android:layout_height="35dp"
         android:text="title"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"

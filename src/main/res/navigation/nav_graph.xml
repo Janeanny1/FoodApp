@@ -16,8 +16,13 @@
         android:label="category"
         tools:layout="@layout/category" />
     <activity
-        android:id="@+id/foodListActivity"
-        android:name="com.example.foodapp.model.FoodListActivity"
-        android:label="activity_food_list"
-        tools:layout="@layout/activity_food_list" />
+        android:id="@+id/showDetailsActivity"
+        android:name="com.example.foodapp.ShowDetailsActivity"
+        android:label="activity_show_details"
+        tools:layout="@layout/activity_show_details" />
+    <activity
+        android:id="@+id/cartActivity"
+        android:name="com.example.foodapp.CartActivity"
+        android:label="activity_cart"
+        tools:layout="@layout/activity_cart" />
 </navigation>
