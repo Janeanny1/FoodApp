@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodapp.R
 import com.example.foodapp.model.Food
@@ -22,8 +21,6 @@ class PopularAdapter : RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() 
         mListener = listener
     }
 
-   lateinit var adapter: PopularAdapter
-    lateinit var layoutManager : LinearLayoutManager
 
     var popular = ArrayList<Food>()
 
@@ -51,7 +48,6 @@ class PopularAdapter : RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() 
         holder.titleName.findViewById<TextView>(R.id.title_name).text = popular[position].title
         holder.txtAmount.findViewById<TextView>(R.id.amount).text = popular[position].amount
         holder.img.setImageResource(currentPopular.pic)
-
 
     }
 

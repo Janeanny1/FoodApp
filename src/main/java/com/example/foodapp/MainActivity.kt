@@ -2,7 +2,6 @@ package com.example.foodapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         category.add(Category(R.drawable.cat_1, "Pizza"))
         category.add(Category(R.drawable.cat_2, "Burger"))
         category.add(Category(R.drawable.cat_3, "Bagel"))
@@ -56,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView2.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerView2.setHasFixedSize(true)
         recyclerView2.adapter = popularAdapter
+
 
         popularAdapter.setOnItemClickListener(object : PopularAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {

@@ -6,17 +6,12 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodapp.R
 import com.example.foodapp.model.Category
 
 
 class CategoryAdapter() : RecyclerView.Adapter<CategoryAdapter.CategotyViewHolder>() {
-
-    lateinit var adapter : CategoryAdapter
-    lateinit var layoutManager: LinearLayoutManager
-
 
     var category = ArrayList<Category>()
     var listener: AdapterView.OnItemClickListener? = null

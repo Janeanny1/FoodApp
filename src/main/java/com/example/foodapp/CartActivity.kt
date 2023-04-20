@@ -9,9 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodapp.adapter.CartAdapter
+import com.example.foodapp.databinding.ActivityCartBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CartActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityCartBinding
 
     private lateinit var recyclerView3: RecyclerView
     private lateinit var itemTotal : TextView
@@ -20,11 +23,12 @@ class CartActivity : AppCompatActivity() {
     private lateinit var total : TextView
     private lateinit var taxFee : TextView
     private lateinit var totalFee : TextView
-    private lateinit var bundle: Bundle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cart)
+        binding = ActivityCartBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 
         recyclerView3 = findViewById(R.id.recyclerView3)
         itemTotal = findViewById(R.id.itemTotal)
